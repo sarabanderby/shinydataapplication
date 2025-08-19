@@ -10,9 +10,8 @@ RUN dnf update -y
 
 RUN dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm && \
     /usr/bin/crb enable && \
-    dnf install -y epel-release && \
-    dnf install -y flexiblas-* && \
-    dnf install -y openblas* && \
+    dnf repolist --all && \
+    dnf install -y epel-release flexiblas-* openblas* && \
     dnf install -y https://mirror.stream.centos.org/9-stream/AppStream/x86_64/os/Packages/flexiblas-openblas-openmp64-3.0.4-8.el9.x86_64.rpm && \
     dnf update -y
 
@@ -28,8 +27,11 @@ RUN dnf install -y pkgconf-pkg-config.x86_64 && \
     dnf install -y https://mirror.stream.centos.org/9-stream/AppStream/x86_64/os/Packages/flexiblas-devel-3.0.4-8.el9.x86_64.rpm && \
     dnf install -y https://mirror.stream.centos.org/9-stream/CRB/x86_64/os/Packages/libtirpc-devel-1.3.3-9.el9.x86_64.rpm && \
     dnf update -y && \
-    dnf install -y R && \
-    dnf install -y libsodium-devel.x86_64 libgit2-devel.x86_64 libcurl-devel cmake
+    dnf install -y R libsodium-devel.x86_64 libgit2-devel.x86_64 libcurl-devel cmake
+
+RUN R --version
+
+USER 1001
 
 RUN R --version
 
