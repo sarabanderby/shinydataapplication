@@ -34,7 +34,3 @@ RUN dnf install -y pkgconf-pkg-config.x86_64 && \
 RUN R --version
 
 USER 1001
-
-USER 1001
-
-
