@@ -1,0 +1,5 @@
+FROM quay.io/sara_banderby/rhel9-r4:latest
+
+USER root
+
+RUN R -q -e 'install.packages(c("shiny"), repos = "https://cran.rstudio.com/")'
