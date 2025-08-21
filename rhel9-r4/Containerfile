@@ -10,7 +10,7 @@ RUN dnf update -y
 
 RUN dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm && \
     /usr/bin/crb enable && \
-    dnf install -y epel-release flexiblas-* openblas* && \
+    dnf install -y epel-release flexiblas-* openblas* libpng-devel gdal-devel gdal-libs && \
     dnf install -y https://mirror.stream.centos.org/9-stream/AppStream/x86_64/os/Packages/flexiblas-openblas-openmp64-3.0.4-8.el9.x86_64.rpm && \
     dnf update -y
 
