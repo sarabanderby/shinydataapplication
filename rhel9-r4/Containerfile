@@ -10,15 +10,14 @@ RUN dnf update -y
 
 RUN dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm && \
     /usr/bin/crb enable && \
-    dnf install -y epel-release flexiblas-* openblas* libpng-devel gdal-devel gdal-libs && \
+    dnf install -y epel-release flexiblas-* openblas* libpng-devel && \
     dnf install -y https://mirror.stream.centos.org/9-stream/AppStream/x86_64/os/Packages/flexiblas-openblas-openmp64-3.0.4-8.el9.x86_64.rpm && \
     dnf update -y
 
 
 RUN dnf install -y pkgconf-pkg-config.x86_64 && \
     dnf install -y https://mirror.stream.centos.org/9-stream/AppStream/x86_64/os/Packages/flexiblas-3.0.4-8.el9.x86_64.rpm && \
-    dnf install -y libtirpc.x86_64 && \
-    dnf install -y perl-libs.x86_64 && \
+    dnf install -y libtirpc.x86_64 perl-libs.x86_64 && \
     dnf install -y https://rpmfind.net/linux/centos-stream/9-stream/CRB/x86_64/os/Packages/perl-Unicode-EastAsianWidth-12.0-7.el9.noarch.rpm && \
     dnf install -y https://mirror.stream.centos.org/9-stream/CRB/x86_64/os/Packages/texinfo-6.7-15.el9.x86_64.rpm && \
     dnf install -y https://mirror.stream.centos.org/9-stream/CRB/x86_64/os/Packages/texinfo-tex-6.7-15.el9.x86_64.rpm && \
