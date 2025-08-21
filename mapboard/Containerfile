@@ -6,7 +6,7 @@ LABEL version="2.0"
 
 USER root
 
-RUN dnf -y install glibc-langpack-en
+RUN dnf -y install glibc-langpack-en libpng.x86_64
 ENV LANG en_US.UTF-8
 
 RUN R -q -e 'install.packages(c("shinyjs","terra", "leaflet"), repos = "https://cran.rstudio.com/")'
