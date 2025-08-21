@@ -1,1 +1,25 @@
+FROM quay.io/sara_banderby/rhel9-r4:shiny
 
+LABEL maintainer="abanderb@redhat.com"
+LABEL description="R runtime image for dashboard demo."
+LABEL version="2.0"
+
+USER root
+
+RUN dnf -y install glibc-langpack-en
+ENV LANG en_US.UTF-8
+
+RUN R -q -e 'install.packages(c("shinyjs", "leaflet"), repos = "https://cran.rstudio.com/")'
+
+RUN mkdir /application
+
+
+COPY app.r /application
+COPY merged_claims.csv /application
+COPY www /application
+
+WORKDIR /application
+
+USER 1001
+
+EXPOSE 8080
