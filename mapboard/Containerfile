@@ -9,7 +9,7 @@ USER root
 RUN dnf -y install glibc-langpack-en
 ENV LANG en_US.UTF-8
 
-RUN R -q -e 'install.packages(c("shinyjs", "leaflet"), repos = "https://cran.rstudio.com/")'
+RUN R -q -e 'install.packages(c("shinyjs","terra", "leaflet"), repos = "https://cran.rstudio.com/")'
 
 RUN mkdir /application
 
