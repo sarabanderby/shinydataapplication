@@ -6,7 +6,7 @@ LABEL version="2.0"
 
 USER root
 
-RUN dnf -y install glibc-langpack-en libpng-devel gdal-devel gdal-libs
+RUN dnf -y install glibc-langpack-en libpng-devel gdal-devel gdal-libs scalapack-mpich
 ENV LANG en_US.UTF-8
 
 RUN R -q -e 'install.packages(c("shinyjs", "leaflet"), repos = "https://cran.rstudio.com/")'
