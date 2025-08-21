@@ -6,7 +6,7 @@ LABEL version="2.0"
 
 USER root
 
-RUN dnf -y install glibc-langpack-en libpng.x86_64
+RUN dnf -y install glibc-langpack-en https://rpmfind.net/linux/centos-stream/9-stream/AppStream/x86_64/os/Packages/libpng-devel-1.6.37-12.el9.i686.rpm
 ENV LANG en_US.UTF-8
 
 RUN R -q -e 'install.packages(c("shinyjs", "leaflet"), repos = "https://cran.rstudio.com/")'
