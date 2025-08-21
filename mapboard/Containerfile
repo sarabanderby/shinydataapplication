@@ -7,7 +7,7 @@ LABEL version="2.0"
 USER root
 
 RUN dnf -y install glibc-langpack-en 
-RUN dnf -y https://rpmfind.net/linux/centos-stream/9-stream/AppStream/x86_64/os/Packages/libpng-devel-1.6.37-12.el9.i686.rpm
+RUN dnf -y install https://rpmfind.net/linux/centos-stream/9-stream/AppStream/x86_64/os/Packages/libpng-devel-1.6.37-12.el9.i686.rpm
 RUN rpm -q libpng*
 ENV LANG en_US.UTF-8
 
